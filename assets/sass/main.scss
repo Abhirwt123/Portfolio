@@ -1,0 +1,483 @@
+@import "./color.scss";
+@import "./fonts.scss";
+@import "./mixin.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  cursor: grab;
+}
+#cursor {
+  height: 4rem;
+  width: 4rem;
+  background: $primary-text2;
+  border-radius: 5rem;
+  position: absolute;
+  transition: 0.1s all;
+  z-index: 1;
+  display: none;
+}
+
+// global css
+html {
+  font-size: 62.5%;
+}
+.container {
+  max-width: 115rem;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+.redtext {
+  color: $primary-text2;
+}
+
+.btn {
+  background-color: $primary-text2;
+  padding: 0.8rem 2rem;
+  border: none;
+  outline: none;
+  color: $primary-text;
+  border-radius: 4rem;
+  font-size: 1.6rem;
+  position: relative;
+  z-index: 2;
+}
+// header section start
+header {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  .header-section {
+    @include d-flex;
+    justify-content: space-between;
+    padding: 1.2rem 0.4rem;
+    position: relative;
+    .logo {
+      font-size: 3rem;
+      font-weight: bold;
+      color: $primary-text2;
+    }
+    .navbar {
+      nav {
+        ul {
+          @include d-flex;
+          gap: 4.4rem;
+          li {
+            list-style: none;
+            a {
+              text-decoration: none;
+              font-size: 1.6rem;
+              font-weight: bold;
+              color: $primary-text;
+            }
+          }
+        }
+      }
+    }
+    .menu {
+      display: none;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+// info-box section start
+#home {
+  background-color: $info-color;
+  z-index: 2;
+  .info-box {
+    @include d-flex;
+    .name-left-sec {
+      flex-basis: 55%;
+      .wish,
+      .profession {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: $primary-text;
+        margin-bottom: 1.2rem;
+      }
+      .profession {
+        font-size: 4.2rem;
+        #typing {
+          color: $primary-text2;
+          text-transform: uppercase;
+        }
+      }
+      .info {
+        font-size: 1.4rem;
+        color: $primary-text;
+        margin-bottom: 1rem;
+      }
+      .hire {
+        margin-left: 1rem;
+      }
+    }
+    .image-reight-sec {
+      flex-basis: 45%;
+      padding: 10rem 0 0 2rem;
+      img {
+        width: 100%;
+        border: 1rem solid $primary-text2;
+        border-radius: 33rem;
+      }
+    }
+  }
+}
+
+// about section start
+#about {
+  background-color: $main-bg-color;
+  padding-top: 2rem;
+  .about-box {
+    @include d-flex;
+    .about-left-sec {
+      padding-right: 1rem;
+      flex-basis: 40%;
+      margin-right: 2rem;
+      img {
+        width: 100%;
+        border: 0.4rem solid white;
+      }
+    }
+    .about-right-sec {
+      padding: 1rem;
+      flex-basis: 60%;
+      h3 {
+        color: $primary-text;
+        font-size: 3.2rem;
+        margin-bottom: 1.4rem;
+      }
+      .about-me {
+        color: $primary-text;
+        font-size: 1.4rem;
+        line-height: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .my-information {
+        margin-bottom: 1rem;
+        @include d-flex;
+        ul {
+          li {
+            list-style: none;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: $primary-text;
+            line-height: 4.2rem;
+          }
+        }
+        .list-tags {
+          margin-right: 10rem;
+        }
+      }
+    }
+  }
+}
+// fixed image section start
+.fixed-image {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../images/cta-action.jpg);
+  width: 100%;
+  height: 35rem;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(245, 84, 34, 0.4);
+  }
+  .count-box {
+    @include d-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 6rem;
+    .project-count-number {
+      font-weight: bold;
+      font-size: 12rem;
+      text-align: center;
+    }
+    .project-name {
+      font-size: 4rem;
+      font-weight: bold;
+    }
+  }
+}
+// services section start
+#service {
+  background-color: $main-bg-color;
+  padding-top: 14rem;
+  h4 {
+    font-size: 4rem;
+    color: $primary-text;
+    text-align: center;
+    padding-bottom: 8rem;
+    &::after {
+      content: "";
+      position: relative;
+      display: inline-block;
+      width: 12rem;
+      height: 0.3rem;
+      background-color: $primary-text2;
+      top: 1.5rem;
+      right: 18rem;
+    }
+  }
+  .service-box {
+    @include d-flex;
+    justify-content: space-between;
+    .service-card {
+      margin: 1.4rem 1.8rem;
+      background-color: $card-color;
+      padding: 2.2rem 2rem;
+      border-radius: 1rem;
+      color: $primary-text;
+      font-size: 1.4rem;
+      text-align: center;
+      z-index: 2;
+      &:hover {
+        transform: translateY(-1.8rem);
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+        background-color: rgba(247, 165, 14, 0.774);
+      }
+    }
+    .service-logo {
+      width: 6rem;
+      height: 6rem;
+      background-color: $primary-text2;
+      border-radius: 3rem;
+      margin: auto;
+      i {
+        font-size: 3.5rem;
+        padding: 1rem;
+      }
+    }
+    .service-logo,
+    .service-title,
+    .service-info {
+      margin-bottom: 1.5rem;
+    }
+    .service-title {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+    .javascript {
+      .jquery-img {
+        width: 6rem;
+        height: 6rem;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+// PROJECT SECTION STARAT
+
+#projects {
+  background-color: $main-bg-color;
+  padding: 4rem 0;
+  .projects-box {
+    .project-title {
+      font-size: 6rem;
+      text-align: center;
+      font-weight: bold;
+    }
+    .projects-info {
+      @include d-flex;
+      margin-top: 2rem;
+      gap: 1.2rem;
+      position: relative;
+      z-index: 2;
+      .project-card {
+        flex-basis: 33.33%;
+        position: relative;
+        @include d-flex;
+        justify-content: center;
+        img {
+          width: 100%;
+        }
+        .project-details {
+          position: absolute;
+          top: 18.7rem;
+          padding: 2rem;
+          height: 100vh;
+          width: 100%;
+          background: rgba(245, 84, 34, 0.4);
+          transition: 1s;
+          &:hover {
+            top: 0;
+          }
+          .project-name {
+            font-size: 2rem;
+            text-align: center;
+            color: $primary-text;
+            padding: 1.2rem 0;
+            font-weight: bold;
+          }
+          .project-link {
+            font-size: 2rem;
+            text-align: center;
+            background-color: red;
+            padding: 0.4rem 1.2rem;
+            width: 12rem;
+            border-radius: 10rem;
+            margin: auto;
+            a {
+              i {
+                color: $primary-text;
+              }
+            }
+          }
+          .about-project {
+            font-size: 1.4rem;
+            color: white;
+            margin: 1.2rem 0 3rem 0;
+          }
+        }
+      }
+    }
+  }
+}
+// contact section star
+#contact {
+  background-color: $main-bg-color;
+  padding-top: 4rem;
+  h3 {
+    font-size: 6rem;
+    text-align: center;
+    color: $primary-text;
+  }
+  .contact-box {
+    margin-top: 1.2rem;
+    position: relative;
+    z-index: 2;
+    .contact-info-box {
+      @include d-flex;
+      gap: 2rem;
+      .form-user-info {
+        width: 100%;
+        input {
+          width: 100%;
+          padding: 0.8rem 1.2rem;
+          border: 1px solid grey;
+          outline: none;
+          background: transparent;
+          color: white;
+          &::placeholder {
+            color: white;
+          }
+        }
+      }
+    }
+    .message {
+      width: 100%;
+      textarea {
+        width: 100%;
+        resize: none;
+        border: 1px solid grey;
+        outline: none;
+        padding: 0.8rem 1.2rem;
+        background: transparent;
+        margin-top: 2rem;
+        color: white;
+        &::placeholder {
+          color: white;
+        }
+      }
+    }
+    .message-btn {
+      @include d-flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+  }
+}
+// location section
+
+.location{
+  background-color: $main-bg-color;
+  padding: 2rem 0;
+  .location-title{
+    font-size: 6rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  .my-location{
+    iframe{
+      border: 1rem solid $primary-text2;
+      border-radius: 1rem;
+      width: 100%;
+    }
+  }
+}
+
+// media queries
+
+@media only screen and (max-width: 968px) {
+  html {
+    font-size: 45%;
+  }
+  .header-section {
+    padding: 2rem;
+    .logo {
+      font-size: 5rem;
+    }
+    .navbar {
+      display: none;
+    }
+    .menu {
+      display: block;
+    }
+  }
+
+  .info-box {
+    flex-direction: column-reverse;
+    .name-left-sec {
+      flex-basis: 100%;
+      padding: 2rem;
+    }
+    .image-reight-sec {
+      flex-basis: 100%;
+      padding: 2rem;
+    }
+  }
+  .about-box {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .service-box {
+    padding: 2rem;
+  }
+  .contact-box {
+    padding: 2rem;
+  }
+  .service-box {
+    flex-wrap: wrap;
+  }
+  .projects-info {
+    flex-direction: column;
+    gap: 4rem;
+    padding: 2rem;
+    .project-card {
+      .project-details {
+        visibility: hidden;
+        &:hover{
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
