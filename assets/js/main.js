@@ -6,14 +6,7 @@ var typed = new Typed("#typing", {
     loop: true,
   });
 
-       // function for cursor animation
-
-  var cursor = document.getElementById("cursor");
-  document.onmousemove = function (e) {
-    cursor.style.left = e.pageX - 25 + "px";
-    cursor.style.top = e.pageY - 25 + "px";
-    // cursor.style.display = "block";
-  };
+  // function for section ainamiton
 
   AOS.init({
     offset: 200, 
@@ -45,4 +38,12 @@ const navbar =document.querySelector(".mobile-navbar");
 menuIcon.addEventListener("click",function(){
   navbar.style.display="block";
   navbar.classList.add("mobile-fun")
+})
+
+// function for remove the menu
+
+const removeMenu = document.querySelector(".remove-menu");
+
+removeMenu.addEventListener("click",()=>{
+  navbar.style.display="none";
 })

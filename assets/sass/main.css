@@ -7,21 +7,6 @@
   scroll-behavior: smooth;
 }
 
-body {
-  cursor: grab;
-}
-
-#cursor {
-  height: 4rem;
-  width: 4rem;
-  background: #F95353;
-  border-radius: 5rem;
-  position: absolute;
-  transition: 0.1s all;
-  z-index: 1;
-  display: none;
-}
-
 html {
   font-size: 62.5%;
 }
@@ -30,7 +15,6 @@ html {
   max-width: 115rem;
   width: 100%;
   margin: auto;
-  overflow: hidden;
 }
 
 .redtext {
@@ -90,10 +74,17 @@ header .header-section .mobile-navbar {
   width: 50%;
   height: 100vh;
   background: #282F39;
-  top: 6rem;
+  top: 0rem;
   left: 100%;
   z-index: 999999999;
   display: none;
+}
+header .header-section .mobile-navbar .remove-nav i {
+  color: white;
+  position: relative;
+  left: 90%;
+  font-size: 5rem;
+  top: 1rem;
 }
 header .header-section .mobile-navbar nav {
   width: 100%;
@@ -122,6 +113,7 @@ header .header-section .mobile-navbar nav ul li a {
 #home {
   background-color: #282F39;
   z-index: 2;
+  overflow: hidden;
 }
 #home .info-box {
   display: flex;
@@ -164,6 +156,7 @@ header .header-section .mobile-navbar nav ul li a {
 #about {
   background-color: #2B2344;
   padding-top: 2rem;
+  overflow: hidden;
 }
 #about .about-box {
   display: flex;
@@ -208,6 +201,9 @@ header .header-section .mobile-navbar nav ul li a {
 #about .about-box .about-right-sec .my-information .list-tags {
   margin-right: 10rem;
 }
+#about .about-box .about-right-sec .download-cv-btn .cv {
+  text-decoration: none;
+}
 
 .fixed-image {
   background-attachment: fixed;
@@ -249,6 +245,9 @@ header .header-section .mobile-navbar nav ul li a {
 #service {
   background-color: #2B2344;
   padding-top: 14rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 #service h4 {
   font-size: 4rem;
@@ -270,6 +269,7 @@ header .header-section .mobile-navbar nav ul li a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  align-items: normal;
 }
 #service .service-box .service-card {
   margin: 1.4rem 1.8rem;
@@ -280,6 +280,7 @@ header .header-section .mobile-navbar nav ul li a {
   font-size: 1.4rem;
   text-align: center;
   z-index: 2;
+  flex-basis: 33.33%;
 }
 #service .service-box .service-card:hover {
   transform: translateY(-1.8rem);
@@ -318,6 +319,11 @@ header .header-section .mobile-navbar nav ul li a {
 #projects {
   background-color: #2B2344;
   padding: 4rem 0;
+  position: relative;
+  z-index: 1;
+}
+#projects .projects-box {
+  overflow: hidden;
 }
 #projects .projects-box .project-title {
   font-size: 6rem;
@@ -542,10 +548,9 @@ header .header-section .mobile-navbar nav ul li a {
     gap: 4rem;
     padding: 2rem;
   }
-  .projects-info .project-card .project-details {
-    visibility: hidden;
-  }
-  .projects-info .project-card .project-details:hover {
-    visibility: visible;
+}
+@media only screen and (max-width: 1200px) {
+  .navbar {
+    display: none;
   }
 }/*# sourceMappingURL=main.css.map */
