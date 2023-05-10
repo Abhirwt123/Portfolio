@@ -85,6 +85,38 @@ header {
       position: absolute;
       right: 0;
     }
+    .mobile-navbar {
+      position: fixed;
+      width: 50%;
+      height: 100vh;
+      background: $info-color;
+      top: 6rem;
+      left: 100%;
+      z-index: 999999999;
+      display: none;
+      nav {
+        width: 100%;
+        height: 100vh;
+        ul {
+          @include d-flex;
+          flex-direction: column;
+          gap: 4.4rem;
+          height: 100vh;
+          li {
+            list-style: none;
+            border-bottom: 1px solid white;
+            width: 100%;
+            padding: 2rem;
+            a {
+              text-decoration: none;
+              font-size: 2.6rem;
+              font-weight: bold;
+              color: $primary-text;
+            }
+          }
+        }
+      }
+    }
   }
 }
 // info-box section start
@@ -123,7 +155,6 @@ header {
       padding: 10rem 0 0 2rem;
       img {
         width: 100%;
-        border: 1rem solid $primary-text2;
         border-radius: 33rem;
       }
     }
@@ -315,7 +346,7 @@ header {
           padding: 2rem;
           height: 100vh;
           width: 100%;
-          background: rgba(245, 84, 34, 0.4);
+          background: rgba(245, 83, 34, 0.699);
           transition: 1s;
           &:hover {
             top: 0;
@@ -347,6 +378,40 @@ header {
             margin: 1.2rem 0 3rem 0;
           }
         }
+      }
+    }
+  }
+}
+// popup section start
+#popup {
+  display: none;
+  .poupup-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.295);
+    z-index: 999;
+    top: 0;
+    @include d-flex;
+    justify-content: center;
+    .popup-card {
+      @include d-flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 2.2rem;
+      background: white;
+      margin: auto;
+      padding: 2rem 10rem;
+      border-radius: 1rem;
+      .message-bold {
+        font-weight: bold;
+        font-size: 4rem;
+        text-align: center;
+      }
+      .message {
+        font-size: 2rem;
+        color: grey;
+        text-align: center;
       }
     }
   }
@@ -407,21 +472,26 @@ header {
 }
 // location section
 
-.location{
+.location {
   background-color: $main-bg-color;
   padding: 2rem 0;
-  .location-title{
+  .location-title {
     font-size: 6rem;
     text-align: center;
     font-weight: bold;
   }
-  .my-location{
-    iframe{
+  .my-location {
+    iframe {
       border: 1rem solid $primary-text2;
       border-radius: 1rem;
       width: 100%;
     }
   }
+}
+// adding navbar class
+.mobile-fun{
+  left: 62rem !important;
+  transition: 2s;
 }
 
 // media queries
@@ -439,7 +509,7 @@ header {
       display: none;
     }
     .menu {
-      display: block;
+      display: block !important;
     }
   }
 
@@ -474,7 +544,7 @@ header {
     .project-card {
       .project-details {
         visibility: hidden;
-        &:hover{
+        &:hover {
           visibility: visible;
         }
       }
