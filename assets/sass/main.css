@@ -75,9 +75,10 @@ header .header-section .mobile-navbar {
   height: 100vh;
   background: #282F39;
   top: 0rem;
-  left: 100%;
   z-index: 999999999;
   display: none;
+  right: 0;
+  padding-right: 2rem;
 }
 header .header-section .mobile-navbar .remove-nav i {
   color: white;
@@ -331,19 +332,19 @@ header .header-section .mobile-navbar nav ul li a {
   font-weight: bold;
 }
 #projects .projects-box .projects-info {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   margin-top: 2rem;
   gap: 1.2rem;
   position: relative;
   z-index: 2;
 }
 #projects .projects-box .projects-info .project-card {
-  flex-basis: 33.33%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 #projects .projects-box .projects-info .project-card img {
   width: 100%;
@@ -498,11 +499,6 @@ header .header-section .mobile-navbar nav ul li a {
   width: 100%;
 }
 
-.mobile-fun {
-  left: 62rem !important;
-  transition: 2s;
-}
-
 @media only screen and (max-width: 968px) {
   html {
     font-size: 45%;
@@ -518,6 +514,9 @@ header .header-section .mobile-navbar nav ul li a {
   }
   .header-section .menu {
     display: block !important;
+  }
+  #service .service-box .service-card {
+    flex-basis: auto;
   }
   .info-box {
     flex-direction: column-reverse;
@@ -543,9 +542,8 @@ header .header-section .mobile-navbar nav ul li a {
   .service-box {
     flex-wrap: wrap;
   }
-  .projects-info {
-    flex-direction: column;
-    gap: 4rem;
+  #projects .projects-box .projects-info {
+    grid-template-columns: 1fr 1fr;
     padding: 2rem;
   }
 }

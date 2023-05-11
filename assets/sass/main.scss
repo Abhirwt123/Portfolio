@@ -76,11 +76,12 @@ header {
       height: 100vh;
       background: $info-color;
       top: 0rem;
-      left: 100%;
       z-index: 999999999;
       display: none;
-      .remove-nav{
-        i{
+      right: 0;
+      padding-right: 2rem;
+      .remove-nav {
+        i {
           color: white;
           position: relative;
           left: 90%;
@@ -202,8 +203,8 @@ header {
           margin-right: 10rem;
         }
       }
-      .download-cv-btn{
-        .cv{
+      .download-cv-btn {
+        .cv {
           text-decoration: none;
         }
       }
@@ -336,16 +337,17 @@ header {
       font-weight: bold;
     }
     .projects-info {
-      @include d-flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       margin-top: 2rem;
       gap: 1.2rem;
       position: relative;
       z-index: 2;
       .project-card {
-        flex-basis: 33.33%;
         position: relative;
         @include d-flex;
         justify-content: center;
+        overflow: hidden;
         img {
           width: 100%;
         }
@@ -498,10 +500,10 @@ header {
   }
 }
 // adding navbar class
-.mobile-fun{
-  left: 62rem !important;
-  transition: 2s;
-}
+// .mobile-fun {
+//   left: 62rem !important;
+//   transition: 2s;
+// }
 
 // media queries
 
@@ -519,6 +521,13 @@ header {
     }
     .menu {
       display: block !important;
+    }
+  }
+  #service {
+    .service-box {
+      .service-card {
+        flex-basis:auto;
+      }
     }
   }
 
@@ -546,14 +555,17 @@ header {
   .service-box {
     flex-wrap: wrap;
   }
-  .projects-info {
-    flex-direction: column;
-    gap: 4rem;
-    padding: 2rem;
+  #projects {
+    .projects-box {
+      .projects-info {
+        grid-template-columns: 1fr 1fr;
+        padding: 2rem;
+      }
+    }
   }
 }
-@media only screen and (max-width:1200px) {
-    .navbar{
-      display: none;
-    }
+@media only screen and (max-width: 1200px) {
+  .navbar {
+    display: none;
+  }
 }
