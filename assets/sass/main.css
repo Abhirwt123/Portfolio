@@ -15,6 +15,7 @@ html {
   max-width: 115rem;
   width: 100%;
   margin: auto;
+  overflow: hidden;
 }
 
 .redtext {
@@ -515,8 +516,13 @@ header .header-section .mobile-navbar nav ul li a {
   .header-section .menu {
     display: block !important;
   }
+  #service .service-box {
+    justify-content: center;
+    align-items: center;
+  }
   #service .service-box .service-card {
     flex-basis: auto;
+    width: 63rem;
   }
   .info-box {
     flex-direction: column-reverse;

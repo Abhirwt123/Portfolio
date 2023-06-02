@@ -17,6 +17,7 @@ html {
   max-width: 115rem;
   width: 100%;
   margin: auto;
+  overflow: hidden;
 }
 .redtext {
   color: $primary-text2;
@@ -525,8 +526,11 @@ header {
   }
   #service {
     .service-box {
+      justify-content: center;
+      align-items: center;
       .service-card {
         flex-basis:auto;
+        width: 63rem;
       }
     }
   }
