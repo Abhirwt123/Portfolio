@@ -31,7 +31,6 @@ html {
   border-radius: 4rem;
   font-size: 1.6rem;
   position: relative;
-  z-index: 2;
 }
 
 header {
@@ -435,7 +434,6 @@ header .header-section .mobile-navbar nav ul li a {
 #contact .contact-box {
   margin-top: 1.2rem;
   position: relative;
-  z-index: 2;
 }
 #contact .contact-box .contact-info-box {
   display: flex;

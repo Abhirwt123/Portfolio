@@ -32,7 +32,6 @@ html {
   border-radius: 4rem;
   font-size: 1.6rem;
   position: relative;
-  z-index: 2;
 }
 // header section start
 header {
@@ -440,7 +439,6 @@ header {
   .contact-box {
     margin-top: 1.2rem;
     position: relative;
-    z-index: 2;
     .contact-info-box {
       @include d-flex;
       gap: 2rem;
