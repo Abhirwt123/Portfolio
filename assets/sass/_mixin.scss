@@ -1,0 +1,25 @@
+@mixin d-flex {
+    display: flex;
+    align-items: center;
+}
+
+@mixin effect {
+    &::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        width: 0;
+        top: 2.5rem;
+        height: 0.3rem;
+        left: 0px;
+        background-color: #F95353;
+        transition: .3s all;
+    }
+}
+
+@mixin click{
+    &:active{
+            transform: translateX(.4rem) translateY(.4rem);
+            box-shadow: 0 0 0 #b63131;
+    }
+}

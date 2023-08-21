@@ -31,6 +31,12 @@ html {
   border-radius: 4rem;
   font-size: 1.6rem;
   position: relative;
+  box-shadow: 0.4rem 0.4rem 0 #924040;
+  transition: 0.3s all;
+}
+.btn:active {
+  transform: translateX(0.4rem) translateY(0.4rem);
+  box-shadow: 0 0 0 #b63131;
 }
 
 header {
@@ -59,15 +65,31 @@ header .header-section .navbar nav ul li {
   list-style: none;
 }
 header .header-section .navbar nav ul li a {
+  position: relative;
   text-decoration: none;
   font-size: 1.6rem;
   font-weight: bold;
   color: #fff;
 }
+header .header-section .navbar nav ul li a::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  top: 2.5rem;
+  height: 0.3rem;
+  left: 0px;
+  background-color: #F95353;
+  transition: 0.3s all;
+}
+header .header-section .navbar nav ul li a:hover::after {
+  width: 100%;
+}
 header .header-section .menu {
   display: none;
   position: absolute;
   right: 0;
+  transition: 1s all;
 }
 header .header-section .mobile-navbar {
   position: fixed;
@@ -368,6 +390,12 @@ header .header-section .mobile-navbar nav ul li a {
   padding: 1.2rem 0;
   font-weight: bold;
 }
+@media screen and (max-width: 968px) {
+  #projects .projects-box .projects-info .project-card .project-details .project-name {
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+}
 #projects .projects-box .projects-info .project-card .project-details .project-link {
   font-size: 2rem;
   text-align: center;
@@ -380,10 +408,25 @@ header .header-section .mobile-navbar nav ul li a {
 #projects .projects-box .projects-info .project-card .project-details .project-link a i {
   color: #fff;
 }
+@media screen and (max-width: 968px) {
+  #projects .projects-box .projects-info .project-card .project-details .project-link {
+    padding: 0;
+  }
+}
 #projects .projects-box .projects-info .project-card .project-details .about-project {
   font-size: 1.4rem;
   color: white;
   margin: 1.2rem 0 3rem 0;
+}
+@media screen and (max-width: 968px) {
+  #projects .projects-box .projects-info .project-card .project-details .about-project {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 968px) {
+  #projects .projects-box .projects-info .project-card .project-details {
+    top: 11.7rem;
+  }
 }
 
 #popup {
@@ -480,7 +523,7 @@ header .header-section .mobile-navbar nav ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  margin: 3rem 0;
 }
 
 .location {
@@ -496,6 +539,17 @@ header .header-section .mobile-navbar nav ul li a {
   border: 1rem solid #F95353;
   border-radius: 1rem;
   width: 100%;
+}
+
+footer {
+  background-color: #282F39;
+  padding-top: 3rem;
+}
+footer .footer-wrap p {
+  padding-bottom: 1rem;
+  color: white;
+  font-size: 1.6rem;
+  text-align: center;
 }
 
 @media only screen and (max-width: 968px) {
