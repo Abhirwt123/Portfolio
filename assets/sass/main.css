@@ -38,6 +38,9 @@ html {
   transform: translateX(0.4rem) translateY(0.4rem);
   box-shadow: 0 0 0 #b63131;
 }
+.btn:hover {
+  cursor: pointer;
+}
 
 header {
   position: absolute;
@@ -370,6 +373,8 @@ header .header-section .mobile-navbar nav ul li a {
 }
 #projects .projects-box .projects-info .project-card img {
   width: 100%;
+  filter: grayscale(1);
+  transition: 0.5s all;
 }
 #projects .projects-box .projects-info .project-card .project-details {
   position: absolute;
@@ -427,6 +432,12 @@ header .header-section .mobile-navbar nav ul li a {
   #projects .projects-box .projects-info .project-card .project-details {
     top: 11.7rem;
   }
+}
+#projects .projects-box .projects-info .project-card:hover {
+  cursor: pointer;
+}
+#projects .projects-box .projects-info .project-card:hover img {
+  filter: grayscale(0);
 }
 
 #popup {

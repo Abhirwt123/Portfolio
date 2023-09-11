@@ -35,6 +35,9 @@ html {
   box-shadow: .4rem .4rem 0 #924040;
   transition: .3s all;
   @include click;
+  &:hover{
+    cursor: pointer;
+  }
 }
 // header section start
 header {
@@ -359,6 +362,8 @@ header {
         overflow: hidden;
         img {
           width: 100%;
+          filter: grayscale(1);
+          transition: .5s all;
         }
         .project-details {
           position: absolute;
@@ -410,6 +415,12 @@ header {
           @media screen and (max-width: 968px) {
             top: 11.7rem;
         }
+        }
+        &:hover{
+          cursor: pointer;
+        }
+        &:hover img{
+          filter: grayscale(0);
         }
       }
     }
