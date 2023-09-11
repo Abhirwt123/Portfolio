@@ -372,9 +372,12 @@ header .header-section .mobile-navbar nav ul li a {
   overflow: hidden;
 }
 #projects .projects-box .projects-info .project-card img {
+  min-height: 25.4rem;
   width: 100%;
   filter: grayscale(1);
   transition: 0.5s all;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #projects .projects-box .projects-info .project-card .project-details {
   position: absolute;

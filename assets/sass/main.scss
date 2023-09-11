@@ -361,9 +361,11 @@ header {
         justify-content: center;
         overflow: hidden;
         img {
+          min-height: 25.4rem;
           width: 100%;
           filter: grayscale(1);
           transition: .5s all;
+          object-fit: cover;
         }
         .project-details {
           position: absolute;
