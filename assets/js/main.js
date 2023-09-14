@@ -36,8 +36,7 @@ const menuIcon =document.querySelector(".menu");
 const navbar =document.querySelector(".mobile-navbar");
 
 menuIcon.addEventListener("click",function(){
-  navbar.style.display="block";
-  navbar.classList.add("mobile-fun")
+  navbar.style.transform="translateX(0)";
 })
 
 // function for remove the menu
@@ -45,5 +44,5 @@ menuIcon.addEventListener("click",function(){
 const removeMenu = document.querySelector(".remove-menu");
 
 removeMenu.addEventListener("click",()=>{
-  navbar.style.display="none";
+  navbar.style.transform="translateX(-100%)";
 })

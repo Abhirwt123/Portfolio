@@ -1,6 +1,23 @@
-@mixin d-flex {
+
+@mixin d-flex($al:center,$js:center,$gap:0px){
     display: flex;
-    align-items: center;
+    align-items: $al;
+    justify-content: $js;
+    gap: $gap;
+}
+
+@mixin grid($grid_col:repeat(3,1fr),$gap:0px){
+    display: grid;
+    grid-template-columns: $grid_col;
+    gap: $gap;
+}
+
+@mixin hover{
+    cursor: pointer;
+}
+
+@mixin f-direction($fd:coloum){
+  flex-direction: $fd;
 }
 
 @mixin effect {

@@ -28,11 +28,11 @@ html {
   padding: 0.8rem 2rem;
   border: none;
   outline: none;
-  color: $primary-text;
+  color: $primary-text-white;
   border-radius: 4rem;
   font-size: 1.6rem;
   position: relative;
-  box-shadow: .4rem .4rem 0 #924040;
+  box-shadow: .4rem .4rem 0 $clr-shadow;
   transition: .3s all;
   @include click;
   &:hover{
@@ -66,7 +66,7 @@ header {
               text-decoration: none;
               font-size: 1.6rem;
               font-weight: bold;
-              color: $primary-text;
+              color: $primary-text-white;
               @include effect;
               &:hover::after{
                 width: 100%;
@@ -81,44 +81,48 @@ header {
       position: absolute;
       right: 0;
        transition: 1s all;
+       img{
+        padding-right: 1rem;
+       }
     }
     .mobile-navbar {
       position: fixed;
-      width: 50%;
+      width: 100%;
       height: 100vh;
       background: $info-color;
       top: 0rem;
       z-index: 999999999;
-      display: none;
       right: 0;
       padding-right: 2rem;
+      transition: .5s all;
+      transform: translateX(-100%);
       .remove-nav {
+        position: relative;
         i {
-          color: white;
-          position: relative;
-          left: 90%;
-          font-size: 5rem;
+          color: $primary-text-white;
+          position: absolute;
+          right: 0;
+          font-size: 3rem;
           top: 1rem;
         }
       }
       nav {
-        width: 100%;
-        height: 100vh;
+       @include d-flex;
+       width: 100%;
+       height: 100vh;
         ul {
-          @include d-flex;
+          @include d-flex(center,center,5rem);
           flex-direction: column;
-          gap: 4.4rem;
-          height: 100vh;
           li {
             list-style: none;
-            border-bottom: 1px solid white;
             width: 100%;
             padding: 2rem;
             a {
               text-decoration: none;
-              font-size: 2.6rem;
+              font-size: 1.6rem;
               font-weight: bold;
-              color: $primary-text;
+              color: $primary-text-white;
+              letter-spacing: 2px;
             }
           }
         }
@@ -139,7 +143,7 @@ header {
       .profession {
         font-size: 2.5rem;
         font-weight: bold;
-        color: $primary-text;
+        color: $primary-text-white;
         margin-bottom: 1.2rem;
       }
       .profession {
@@ -151,7 +155,7 @@ header {
       }
       .info {
         font-size: 1.4rem;
-        color: $primary-text;
+        color: $primary-text-white;
         margin-bottom: 1rem;
       }
       .hire {
@@ -182,19 +186,19 @@ header {
       margin-right: 2rem;
       img {
         width: 100%;
-        border: 0.4rem solid white;
+        border: 0.4rem solid $primary-text-white
       }
     }
     .about-right-sec {
       padding: 1rem;
       flex-basis: 60%;
       h3 {
-        color: $primary-text;
+        color: $primary-text-white;
         font-size: 3.2rem;
         margin-bottom: 1.4rem;
       }
       .about-me {
-        color: $primary-text;
+        color: $primary-text-white;
         font-size: 1.4rem;
         line-height: 2.5rem;
         margin-bottom: 1rem;
@@ -207,7 +211,7 @@ header {
             list-style: none;
             font-size: 1.6rem;
             font-weight: 600;
-            color: $primary-text;
+            color: $primary-text-white;
             line-height: 4.2rem;
           }
         }
@@ -240,7 +244,7 @@ header {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background: rgba(245, 84, 34, 0.4);
+    background:$clr-card;
   }
   .count-box {
     @include d-flex;
@@ -268,7 +272,7 @@ header {
   z-index: 1;
   h4 {
     font-size: 4rem;
-    color: $primary-text;
+    color: $primary-text-white;
     text-align: center;
     padding-bottom: 8rem;
     &::after {
@@ -291,7 +295,7 @@ header {
       background-color: $card-color;
       padding: 2.2rem 2rem;
       border-radius: 1rem;
-      color: $primary-text;
+      color: $primary-text-white;
       font-size: 1.4rem;
       text-align: center;
       z-index: 2;
@@ -300,7 +304,7 @@ header {
         transform: translateY(-1.8rem);
         transition: 0.3s ease-in-out;
         cursor: pointer;
-        background-color: rgba(247, 165, 14, 0.774);
+        background-color: $clr-card;
       }
     }
     .service-logo {
@@ -349,10 +353,8 @@ header {
       font-weight: bold;
     }
     .projects-info {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      @include grid;
       margin-top: 2rem;
-      gap: 1.2rem;
       position: relative;
       z-index: 2;
       .project-card {
@@ -373,7 +375,7 @@ header {
           padding: 2rem;
           height: 100vh;
           width: 100%;
-          background: rgba(245, 83, 34, 0.699);
+          background: $clr-card;
           transition: 1s;
           &:hover {
             top: 0;
@@ -381,7 +383,7 @@ header {
           .project-name {
             font-size: 2rem;
             text-align: center;
-            color: $primary-text;
+            color: $primary-text-white;
             padding: 1.2rem 0;
             font-weight: bold;
             @media screen and (max-width: 968px) {
@@ -392,14 +394,14 @@ header {
           .project-link {
             font-size: 2rem;
             text-align: center;
-            background-color: red;
+            background-color: $clr-primary-red;
             padding: 0.4rem 1.2rem;
             width: 12rem;
             border-radius: 10rem;
             margin: auto;
             a {
               i {
-                color: $primary-text;
+                color: $primary-text-white;
               }
             }
             @media screen and (max-width: 968px) {
@@ -408,7 +410,7 @@ header {
           }
           .about-project {
             font-size: 1.4rem;
-            color: white;
+            color: $primary-text-white;
             margin: 1.2rem 0 3rem 0;
             @media screen and (max-width: 968px) {
               margin: 0;
@@ -435,7 +437,7 @@ header {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.295);
+    background-color:$clr-popup-bg;
     z-index: 999;
     top: 0;
     @include d-flex;
@@ -445,7 +447,7 @@ header {
       justify-content: center;
       flex-direction: column;
       gap: 2.2rem;
-      background: white;
+      background:$primary-text-white;
       margin: auto;
       padding: 2rem 10rem;
       border-radius: 1rem;
@@ -456,7 +458,7 @@ header {
       }
       .message {
         font-size: 2rem;
-        color: grey;
+        color: $clr-primary-grey;
         text-align: center;
       }
     }
@@ -469,7 +471,7 @@ header {
   h3 {
     font-size: 6rem;
     text-align: center;
-    color: $primary-text;
+    color: $primary-text-white;
   }
   .contact-box {
     margin-top: 1.2rem;
@@ -482,12 +484,12 @@ header {
         input {
           width: 100%;
           padding: 0.8rem 1.2rem;
-          border: 1px solid grey;
+          border: 1px solid $clr-primary-grey;
           outline: none;
           background: transparent;
-          color: white;
+          color: $primary-text-white;
           &::placeholder {
-            color: white;
+            color: $primary-text-white;
           }
         }
       }
@@ -497,14 +499,14 @@ header {
       textarea {
         width: 100%;
         resize: none;
-        border: 1px solid grey;
+        border: 1px solid gre$clr-primary-grey;
         outline: none;
         padding: 0.8rem 1.2rem;
         background: transparent;
         margin-top: 2rem;
-        color: white;
+        color: $primary-text-white;
         &::placeholder {
-          color: white;
+          color: $primary-text-white;
         }
       }
     }
@@ -536,12 +538,12 @@ header {
 // footer css start
 
 footer{
-  background-color: #282F39;
+  background-color: $info-color;
   padding-top: 3rem;
   .footer-wrap{
     p{
       padding-bottom: 1rem;
-      color: white;
+      color: $primary-text-white;
       font-size: 1.6rem;
       text-align: center;
     }
