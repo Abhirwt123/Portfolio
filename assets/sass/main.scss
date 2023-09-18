@@ -357,6 +357,7 @@ header {
       margin-top: 2rem;
       position: relative;
       z-index: 2;
+      gap: 20px;
       .project-card {
         position: relative;
         @include d-flex;

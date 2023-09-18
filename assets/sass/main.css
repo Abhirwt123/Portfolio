@@ -388,6 +388,7 @@ header .header-section .mobile-navbar nav ul li a {
   margin-top: 2rem;
   position: relative;
   z-index: 2;
+  gap: 20px;
 }
 #projects .projects-box .projects-info .project-card {
   position: relative;
