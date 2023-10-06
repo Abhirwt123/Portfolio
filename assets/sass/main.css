@@ -42,12 +42,18 @@ html {
   cursor: pointer;
 }
 
-header {
+.header-fixed {
+  position: fixed !important;
+  background-color: #282F39;
+  box-shadow: 2px 2px 50px -15px grey;
+}
+
+#header {
   position: absolute;
   width: 100%;
   z-index: 2;
 }
-header .header-section {
+#header .header-section {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,29 +62,29 @@ header .header-section {
   padding: 1.2rem 0.4rem;
   position: relative;
 }
-header .header-section .logo {
+#header .header-section .logo {
   font-size: 3rem;
   font-weight: bold;
   color: #F95353;
 }
-header .header-section .navbar nav ul {
+#header .header-section .navbar nav ul {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0px;
   gap: 4.4rem;
 }
-header .header-section .navbar nav ul li {
+#header .header-section .navbar nav ul li {
   list-style: none;
 }
-header .header-section .navbar nav ul li a {
+#header .header-section .navbar nav ul li a {
   position: relative;
   text-decoration: none;
   font-size: 1.6rem;
   font-weight: bold;
   color: #fff;
 }
-header .header-section .navbar nav ul li a::after {
+#header .header-section .navbar nav ul li a::after {
   content: "";
   position: absolute;
   display: inline-block;
@@ -89,19 +95,19 @@ header .header-section .navbar nav ul li a::after {
   background-color: #F95353;
   transition: 0.3s all;
 }
-header .header-section .navbar nav ul li a:hover::after {
+#header .header-section .navbar nav ul li a:hover::after {
   width: 100%;
 }
-header .header-section .menu {
+#header .header-section .menu {
   display: none;
   position: absolute;
   right: 0;
   transition: 1s all;
 }
-header .header-section .menu img {
+#header .header-section .menu img {
   padding-right: 1rem;
 }
-header .header-section .mobile-navbar {
+#header .header-section .mobile-navbar {
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -113,17 +119,17 @@ header .header-section .mobile-navbar {
   transition: 0.5s all;
   transform: translateX(-100%);
 }
-header .header-section .mobile-navbar .remove-nav {
+#header .header-section .mobile-navbar .remove-nav {
   position: relative;
 }
-header .header-section .mobile-navbar .remove-nav i {
+#header .header-section .mobile-navbar .remove-nav i {
   color: #fff;
   position: absolute;
   right: 0;
   font-size: 3rem;
   top: 1rem;
 }
-header .header-section .mobile-navbar nav {
+#header .header-section .mobile-navbar nav {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,19 +137,19 @@ header .header-section .mobile-navbar nav {
   width: 100%;
   height: 100vh;
 }
-header .header-section .mobile-navbar nav ul {
+#header .header-section .mobile-navbar nav ul {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5rem;
   flex-direction: column;
 }
-header .header-section .mobile-navbar nav ul li {
+#header .header-section .mobile-navbar nav ul li {
   list-style: none;
   width: 100%;
   padding: 2rem;
 }
-header .header-section .mobile-navbar nav ul li a {
+#header .header-section .mobile-navbar nav ul li a {
   text-decoration: none;
   font-size: 1.6rem;
   font-weight: bold;

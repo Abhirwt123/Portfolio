@@ -2,6 +2,7 @@
 @import "./fonts.scss";
 @import "./mixin.scss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,16 +10,19 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
+
 // global css
 html {
   font-size: 62.5%;
 }
+
 .container {
   max-width: 115rem;
   width: 100%;
   margin: auto;
   overflow: hidden;
 }
+
 .redtext {
   color: $primary-text2;
 }
@@ -35,32 +39,44 @@ html {
   box-shadow: .4rem .4rem 0 $clr-shadow;
   transition: .3s all;
   @include click;
-  &:hover{
+
+  &:hover {
     cursor: pointer;
   }
 }
+.header-fixed{
+  position: fixed !important;
+  background-color: $info-color;
+  box-shadow: 2px 2px 50px -15px $clr-primary-grey;
+}
+
 // header section start
-header {
+#header {
   position: absolute;
   width: 100%;
   z-index: 2;
+
   .header-section {
     @include d-flex;
     justify-content: space-between;
     padding: 1.2rem 0.4rem;
     position: relative;
+
     .logo {
       font-size: 3rem;
       font-weight: bold;
       color: $primary-text2;
     }
+
     .navbar {
       nav {
         ul {
           @include d-flex;
           gap: 4.4rem;
+
           li {
             list-style: none;
+
             a {
               position: relative;
               text-decoration: none;
@@ -68,7 +84,8 @@ header {
               font-weight: bold;
               color: $primary-text-white;
               @include effect;
-              &:hover::after{
+
+              &:hover::after {
                 width: 100%;
               }
             }
@@ -76,15 +93,18 @@ header {
         }
       }
     }
+
     .menu {
       display: none;
       position: absolute;
       right: 0;
-       transition: 1s all;
-       img{
+      transition: 1s all;
+
+      img {
         padding-right: 1rem;
-       }
+      }
     }
+
     .mobile-navbar {
       position: fixed;
       width: 100%;
@@ -96,8 +116,10 @@ header {
       padding-right: 2rem;
       transition: .5s all;
       transform: translateX(-100%);
+
       .remove-nav {
         position: relative;
+
         i {
           color: $primary-text-white;
           position: absolute;
@@ -106,17 +128,21 @@ header {
           top: 1rem;
         }
       }
+
       nav {
-       @include d-flex;
-       width: 100%;
-       height: 100vh;
+        @include d-flex;
+        width: 100%;
+        height: 100vh;
+
         ul {
-          @include d-flex(center,center,5rem);
+          @include d-flex(center, center, 5rem);
           flex-direction: column;
+
           li {
             list-style: none;
             width: 100%;
             padding: 2rem;
+
             a {
               text-decoration: none;
               font-size: 1.6rem;
@@ -130,15 +156,19 @@ header {
     }
   }
 }
+
 // info-box section start
 #home {
   background-color: $info-color;
   z-index: 2;
   overflow: hidden;
+
   .info-box {
     @include d-flex;
+
     .name-left-sec {
       flex-basis: 55%;
+
       .wish,
       .profession {
         font-size: 2.5rem;
@@ -146,25 +176,31 @@ header {
         color: $primary-text-white;
         margin-bottom: 1.2rem;
       }
+
       .profession {
         font-size: 4.2rem;
+
         #typing {
           color: $primary-text2;
           text-transform: uppercase;
         }
       }
+
       .info {
         font-size: 1.4rem;
         color: $primary-text-white;
         margin-bottom: 1rem;
       }
+
       .hire {
         margin-left: 1rem;
       }
     }
+
     .image-reight-sec {
       flex-basis: 45%;
       padding: 10rem 0 0 2rem;
+
       img {
         width: 100%;
         border-radius: 33rem;
@@ -178,34 +214,42 @@ header {
   background-color: $main-bg-color;
   padding-top: 2rem;
   overflow: hidden;
+
   .about-box {
     @include d-flex;
+
     .about-left-sec {
       padding-right: 1rem;
       flex-basis: 40%;
       margin-right: 2rem;
+
       img {
         width: 100%;
         border: 0.4rem solid $primary-text-white
       }
     }
+
     .about-right-sec {
       padding: 1rem;
       flex-basis: 60%;
+
       h3 {
         color: $primary-text-white;
         font-size: 3.2rem;
         margin-bottom: 1.4rem;
       }
+
       .about-me {
         color: $primary-text-white;
         font-size: 1.4rem;
         line-height: 2.5rem;
         margin-bottom: 1rem;
       }
+
       .my-information {
         margin-bottom: 1rem;
         @include d-flex;
+
         ul {
           li {
             list-style: none;
@@ -215,10 +259,12 @@ header {
             line-height: 4.2rem;
           }
         }
+
         .list-tags {
           margin-right: 10rem;
         }
       }
+
       .download-cv-btn {
         .cv {
           text-decoration: none;
@@ -227,6 +273,7 @@ header {
     }
   }
 }
+
 // fixed image section start
 .fixed-image {
   background-attachment: fixed;
@@ -237,6 +284,7 @@ header {
   width: 100%;
   height: 35rem;
   position: relative;
+
   &::after {
     position: absolute;
     content: "";
@@ -244,25 +292,29 @@ header {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background:$clr-card;
+    background: $clr-card;
   }
+
   .count-box {
     @include d-flex;
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
     padding-top: 6rem;
+
     .project-count-number {
       font-weight: bold;
       font-size: 12rem;
       text-align: center;
     }
+
     .project-name {
       font-size: 4rem;
       font-weight: bold;
     }
   }
 }
+
 // services section start
 #service {
   background-color: $main-bg-color;
@@ -270,11 +322,13 @@ header {
   overflow: hidden;
   position: relative;
   z-index: 1;
+
   h4 {
     font-size: 4rem;
     color: $primary-text-white;
     text-align: center;
     padding-bottom: 8rem;
+
     &::after {
       content: "";
       position: relative;
@@ -286,10 +340,12 @@ header {
       right: 18rem;
     }
   }
+
   .service-box {
     @include d-flex;
     justify-content: space-between;
     align-items: normal;
+
     .service-card {
       margin: 1.4rem 1.8rem;
       background-color: $card-color;
@@ -300,6 +356,7 @@ header {
       text-align: center;
       z-index: 2;
       flex-basis: 33.33%;
+
       &:hover {
         transform: translateY(-1.8rem);
         transition: 0.3s ease-in-out;
@@ -307,30 +364,36 @@ header {
         background-color: $clr-card;
       }
     }
+
     .service-logo {
       width: 6rem;
       height: 6rem;
       background-color: $primary-text2;
       border-radius: 3rem;
       margin: auto;
+
       i {
         font-size: 3.5rem;
         padding: 1rem;
       }
     }
+
     .service-logo,
     .service-title,
     .service-info {
       margin-bottom: 1.5rem;
     }
+
     .service-title {
       font-weight: bold;
       font-size: 2rem;
     }
+
     .javascript {
       .jquery-img {
         width: 6rem;
         height: 6rem;
+
         img {
           width: 100%;
         }
@@ -338,6 +401,7 @@ header {
     }
   }
 }
+
 // PROJECT SECTION STARAT
 
 #projects {
@@ -345,24 +409,29 @@ header {
   padding: 4rem 0;
   position: relative;
   z-index: 1;
+
   .projects-box {
     overflow: hidden;
+
     .project-title {
       font-size: 6rem;
       text-align: center;
       font-weight: bold;
     }
+
     .projects-info {
       @include grid;
       margin-top: 2rem;
       position: relative;
       z-index: 2;
       gap: 20px;
+
       .project-card {
         position: relative;
         @include d-flex;
         justify-content: center;
         overflow: hidden;
+
         img {
           min-height: 25.4rem;
           width: 100%;
@@ -370,6 +439,7 @@ header {
           transition: .5s all;
           object-fit: cover;
         }
+
         .project-details {
           position: absolute;
           top: 18.7rem;
@@ -378,20 +448,24 @@ header {
           width: 100%;
           background: $clr-card;
           transition: 1s;
+
           &:hover {
             top: 0;
           }
+
           .project-name {
             font-size: 2rem;
             text-align: center;
             color: $primary-text-white;
             padding: 1.2rem 0;
             font-weight: bold;
+
             @media screen and (max-width: 968px) {
               padding: 0;
               padding-bottom: 1rem;
+            }
           }
-          }
+
           .project-link {
             font-size: 2rem;
             text-align: center;
@@ -400,63 +474,75 @@ header {
             width: 12rem;
             border-radius: 10rem;
             margin: auto;
+
             a {
               i {
                 color: $primary-text-white;
               }
             }
+
             @media screen and (max-width: 968px) {
-             padding: 0;
+              padding: 0;
+            }
           }
-          }
+
           .about-project {
             font-size: 1.4rem;
             color: $primary-text-white;
             margin: 1.2rem 0 3rem 0;
+
             @media screen and (max-width: 968px) {
               margin: 0;
+            }
           }
-          }
+
           @media screen and (max-width: 968px) {
             top: 11.7rem;
+          }
         }
-        }
-        &:hover{
+
+        &:hover {
           cursor: pointer;
         }
-        &:hover img{
+
+        &:hover img {
           filter: grayscale(0);
         }
       }
     }
   }
 }
+
 // popup section start
 #popup {
   display: none;
+
   .poupup-wrapper {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background-color:$clr-popup-bg;
+    background-color: $clr-popup-bg;
     z-index: 999;
     top: 0;
     @include d-flex;
     justify-content: center;
+
     .popup-card {
       @include d-flex;
       justify-content: center;
       flex-direction: column;
       gap: 2.2rem;
-      background:$primary-text-white;
+      background: $primary-text-white;
       margin: auto;
       padding: 2rem 10rem;
       border-radius: 1rem;
+
       .message-bold {
         font-weight: bold;
         font-size: 4rem;
         text-align: center;
       }
+
       .message {
         font-size: 2rem;
         color: $clr-primary-grey;
@@ -465,23 +551,29 @@ header {
     }
   }
 }
+
 // contact section star
 #contact {
   background-color: $main-bg-color;
   padding-top: 4rem;
+
   h3 {
     font-size: 6rem;
     text-align: center;
     color: $primary-text-white;
   }
+
   .contact-box {
     margin-top: 1.2rem;
     position: relative;
+
     .contact-info-box {
       @include d-flex;
       gap: 2rem;
+
       .form-user-info {
         width: 100%;
+
         input {
           width: 100%;
           padding: 0.8rem 1.2rem;
@@ -489,14 +581,17 @@ header {
           outline: none;
           background: transparent;
           color: $primary-text-white;
+
           &::placeholder {
             color: $primary-text-white;
           }
         }
       }
     }
+
     .message {
       width: 100%;
+
       textarea {
         width: 100%;
         resize: none;
@@ -506,11 +601,13 @@ header {
         background: transparent;
         margin-top: 2rem;
         color: $primary-text-white;
+
         &::placeholder {
           color: $primary-text-white;
         }
       }
     }
+
     .message-btn {
       @include d-flex;
       justify-content: center;
@@ -518,16 +615,19 @@ header {
     }
   }
 }
+
 // location section
 
 .location {
   background-color: $main-bg-color;
   padding: 2rem 0;
+
   .location-title {
     font-size: 6rem;
     text-align: center;
     font-weight: bold;
   }
+
   .my-location {
     iframe {
       border: 1rem solid $primary-text2;
@@ -536,13 +636,15 @@ header {
     }
   }
 }
+
 // footer css start
 
-footer{
+footer {
   background-color: $info-color;
   padding-top: 3rem;
-  .footer-wrap{
-    p{
+
+  .footer-wrap {
+    p {
       padding-bottom: 1rem;
       color: $primary-text-white;
       font-size: 1.6rem;
@@ -557,24 +659,30 @@ footer{
   html {
     font-size: 45%;
   }
+
   .header-section {
     padding: 2rem;
+
     .logo {
       font-size: 5rem;
     }
+
     .navbar {
       display: none;
     }
+
     .menu {
       display: block !important;
     }
   }
+
   #service {
     .service-box {
       justify-content: center;
       align-items: center;
+
       .service-card {
-        flex-basis:auto;
+        flex-basis: auto;
         width: 63rem;
       }
     }
@@ -582,28 +690,35 @@ footer{
 
   .info-box {
     flex-direction: column-reverse;
+
     .name-left-sec {
       flex-basis: 100%;
       padding: 2rem;
     }
+
     .image-reight-sec {
       flex-basis: 100%;
       padding: 2rem;
     }
   }
+
   .about-box {
     flex-direction: column;
     padding: 2rem;
   }
+
   .service-box {
     padding: 2rem;
   }
+
   .contact-box {
     padding: 2rem;
   }
+
   .service-box {
     flex-wrap: wrap;
   }
+
   #projects {
     .projects-box {
       .projects-info {
@@ -613,6 +728,7 @@ footer{
     }
   }
 }
+
 @media only screen and (max-width: 1200px) {
   .navbar {
     display: none;
