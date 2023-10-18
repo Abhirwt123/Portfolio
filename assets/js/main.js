@@ -55,7 +55,7 @@ window.addEventListener("scroll", () => {
 // fetch products data from local json
 const fetchProductsList = async () => {
   const parent = document.querySelector(".projects-info");
-  const list = await fetch("../assets/json/projects.json");
+  const list = await fetch("../assets/product.js/projects.js");
   const res = await list.json();
 
   const allData = res.forEach((list) => {
