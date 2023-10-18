@@ -422,9 +422,6 @@ html {
   background: rgba(245, 84, 34, 0.4);
   transition: 1s;
 }
-#projects .projects-box .projects-info .project-card .project-details:hover {
-  top: 0;
-}
 #projects .projects-box .projects-info .project-card .project-details .project-name {
   font-size: 2rem;
   text-align: center;
@@ -475,6 +472,9 @@ html {
 }
 #projects .projects-box .projects-info .project-card:hover img {
   filter: grayscale(0);
+}
+#projects .projects-box .projects-info .project-card:hover .project-details {
+  top: 0;
 }
 
 #popup {

@@ -44,13 +44,41 @@ navbarItems.forEach((item) => {
 });
 
 // header
-window.addEventListener("scroll",()=>{
-
-  if(window.scrollY > 500){
-    header.classList.add("header-fixed")
-
-  }else{
-    header.classList.remove("header-fixed")
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 500) {
+    header.classList.add("header-fixed");
+  } else {
+    header.classList.remove("header-fixed");
   }
-})
+});
 
+// fetch products data from local json
+const fetchProductsList = async () => {
+  const parent = document.querySelector(".projects-info");
+  const list = await fetch("../assets/json/projects.json");
+  const res = await list.json();
+
+  const allData = res.forEach((list) => {
+    const createDom = `
+     <img
+       src=${list.image}
+       alt=""
+     />
+     <div class="project-details">
+       <p class="project-name">${list.name}</p>
+       <p class="about-project">
+         ${list.detail}
+         <div class="project-link">
+           <a href=${list.link} target="_blank"
+             ><i class="fa fa-link" aria-hidden="true"></i
+           ></a>
+         </div>
+       </p>
+     </div>`;
+    const projectElement = document.createElement("div");
+    projectElement.classList.add("project-card");
+    projectElement.innerHTML = createDom;
+    parent.appendChild(projectElement);
+  });
+};
+fetchProductsList();

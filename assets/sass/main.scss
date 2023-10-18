@@ -449,10 +449,6 @@ html {
           background: $clr-card;
           transition: 1s;
 
-          &:hover {
-            top: 0;
-          }
-
           .project-name {
             font-size: 2rem;
             text-align: center;
@@ -507,6 +503,9 @@ html {
 
         &:hover img {
           filter: grayscale(0);
+        }
+        &:hover .project-details {
+          top: 0;
         }
       }
     }
